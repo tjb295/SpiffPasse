@@ -1,0 +1,102 @@
+<nav class="navbar navbar-inverse navbar-fixed-top container-fluid">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header navbar-fixed container-fluid">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="spiff-icon.jpg" width="40" height="35"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">About</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#/products">Tops and Bands</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Designers</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a class= "glyphicon glyphicon-shopping-cart" style="cursor:pointer" data-toggle="modal" data-target="#cartModal"></a></li>
+        <li ><a ng-click="logout()" href= "#">Logout</a></li>
+        <li><a href="#/user_info">Account</a></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!--For the centerpiece image -->
+<div class="bg container-fluid">
+<div class="jumbotron container-fluid">
+  <h1>Born and Raised in the Bay</h1>
+  <p>Wavy but sharp. Modern day Retro Streetwear</p>
+</div>
+</div>
+<hr style = "width: 95%">
+
+  <div class="main" ng-controller="IndexController" >
+    <div class="container">
+      <div class="row">
+        <div class="column">
+          <div class="span4"><h1 style="color: white">Follow us</h1>
+          </div>
+          <p>Instagram</p>
+        <!-- LightWidget WIDGET --><script style="position: relative; left: -100px; " src="http://lightwidget.com/widgets/lightwidget.js"></script><iframe src="http://lightwidget.com/widgets/e42106ba6a5453cd9014f73f0119347d.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+        </div>
+        <div class="column">
+          <div class="span4"> </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="span4"><h1 style="color:white">News</h1></div>
+          <a class="twitter-timeline" data-width="700" data-height="500" data-theme="dark" href="https://twitter.com/SPiFFPASSE">Tweets by SPiFFPASSE</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--Modal for cart -->
+<div class="modal fade" id="cartModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Your Shopping Cart</h2>
+        <h4> Total: {{user_data.total | currency}}</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="close"></button>
+      </div>
+      <div class="modal-body">
+        <div ng-repeat="items in user_data.cart" ng-if="!items.removed">
+          <h2>{{items.name}}<span  class="glyphicon glyphicon-remove btn pull-right" ng-click="remove_item($index)"></span></h2>
+          <h4>{{items.price | currency}}</h4>
+          <p> {{items.color}}</p>
+          <p> {{items.size}}</p>
+        </div>
+        <br>
+        <div class="span4" ng-click="checkout()"> <button class="btn btn=primary btn btn-md "  type= "button"> Checkout </button></div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr style= "width: 95%">
+<div class="container">
+	<div class="row">
+      <div class="col-md-12 text-center"><p>Site by Thomas Back, Fashion brought to you by Eric Eroles, Arvie</p></div>
+    </div>
+</div>

@@ -1,0 +1,96 @@
+<nav class="navbar navbar-inverse navbar-fixed-top container-fluid">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header navbar-fixed container-fluid">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="spiff-icon.jpg" width="40" height="35"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">About</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#/products">Tops and Bands</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Designers</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a class= "glyphicon glyphicon-shopping-cart" style="cursor:pointer" data-toggle="modal" data-target="#cartModal"></a></li>
+        <li ><a ng-click="logout()" href= "#">Logout</a></li>
+        <li><a href="#/user_info">Account</a></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div style="padding-top: 40px">
+ 
+<h1 style="color:white">Address information</h1>
+<!-- google maps api -->
+
+<ui-gmap-google-map class="angular-google-map-container" center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+ <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0zSdawpwm8lpltF_ByJpGIPrxmCbQhVA&callback=initMap"
+    async defer></script> -->
+<div >
+  <h1>No Shipping information included, please add below!</h1>
+</div>
+
+
+
+
+ <a style="cursor:pointer" data-toggle="modal" data-target="#enterModal">Edit Information</a>
+</div>
+
+
+
+<div class="modal fade" id="enterModal" tabindex="-1" roles="dialog">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Edit or Add information</h2>
+      <button type="button" class="close" data-dismiss="modal" aria-label="close"></button>
+    </div>
+    <div class="modal-body">
+      <form - role="form">
+      <div class = "form-group">
+        <label for="street_address">Street Address: </label>
+        <input type="text" class="form-control" id="street_address" ng-model="account.str_add"/>
+    </div>
+    <div>
+      <label for="city">City</label>
+      <input type="text" class="form-control" id="city" ng-model="account.city"/>
+    </div>
+    <div>
+      <label for="state">State</label>
+      <input type="text" class="form-control" id="state" ng-model="account.state"/>
+    </div>
+    <div>
+      <label for="zip"> Zip Code</label>
+      <input type="text" class="form-control" id="zip" ng-model="account.zip"/>
+    </div>
+    <button type="submit" class="btn btn-default" ng-click ="add_information()">Submit</button>
+  </form>
+  <p style="color:yellow; visibility: hidden;" id="return_message">{{message}}</p>
+    </div>
+  </div>
+</div>
+</div>

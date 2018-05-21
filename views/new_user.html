@@ -49,24 +49,24 @@
 
         <div class=" form-group">
             <h3> Create an Account to keep track of your items!</h3>
-            <label for="first_name">First Name: </label>
+            <label for="first_name" style="color: white">First Name: </label>
             <input type = "text" class ="form-control" id="first_name" name="first_name" ng-model="account.first_name"ng-pattern="name_regex"  />
         </div>
         <div class="form-group">
-            <label for="last_name">Last Name: </label>
+            <label for="last_name" style="color: white">Last Name: </label>
             <input tyoe="text" class="form-control" id="last_name" name="last_name" ng-model="account.last_name" ng-pattern="name_regex" />
         </div>
-        <div class="form-group">
-            <label for="email">Email: </label>
+        <div class="form-group" >
+            <label for="email" style="color: white" >Email: </label>
             <input type="text" class="form-control" id="email" name="email" ng-model="account.email" />
         </div>
         <div class="form-group">
-            <label for="password"> Password: </label>
-            <input type="password" class="form-control" id="password" name="password" ng-model="account.password""/>
+            <label for="password" style="color: white"> Password: </label>
+            <input type="password" class="form-control" id="password" name="password" ng-model="account.password"/>
         </div>
         <div class="form-group">
-            <label for="password2"> Password: </label>
-            <input type="password" class="form-control" id="password2" name="password2" ng-model="account.password2""/>
+            <label for="password2" style="color: white"> Re-Enter Password: </label>
+            <input type="password" class="form-control" id="password2" name="password2" ng-model="account.password2"/>
         </div>
         <button type="submit" class="btn btn-default" ng-click="create_user()">Submit</button>
 </form>

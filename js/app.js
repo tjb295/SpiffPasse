@@ -4,7 +4,7 @@ app.run(['$rootScope', '$location', function($rootScope, $location) {
     $rootScope.$on('$routeChangeError', function(event, next, previous, error) {
         //if we have an error we can redirect to the sign in
         if(error === "AUTH_REQUIRED") {
-            $location.path('/login');
+            $location.path('/home');
         }
     });
 }]);

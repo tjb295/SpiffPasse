@@ -26,17 +26,17 @@
 <h3> Login to your Account</h3>
 <form role="form">
         <div class="form-group">
-            <label for="email">Email: </label>
+            <label for="email" style="color: white">Email: </label>
             <input type="text" class="form-control" id="email" ng-model="account.email" />
         </div>
         <div>
-            <label for="password">Password: </label>
+            <label for="password" style="color: white">Password: </label>
             <input type="password" class="form-control" id="password" name="password" ng-model="account.password" />
         </div>
         <button type="submit" class="btn btn-default" ng-click = "login()">Submit</button>
 </form>
 <div>
-    <p>Don't have an Account?</p>
+    <p style="color: white">Don't have an Account?</p>
     <a href="#/new_user" >Create Account</a>
 </div>
 <p style="color:red; visibility:hidden;" id="login_error">{{error}}</p>
